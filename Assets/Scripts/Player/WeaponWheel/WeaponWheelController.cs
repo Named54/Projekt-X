@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ public class WeaponWheelController : MonoBehaviour
     public Sprite Katana;
     public Sprite Scythe;
     public Sprite Dagger;
-    public static int weaponID;
+    public int weaponID;
     public Image selectedWeapon;
     private bool weaponWheelSelected = false;
 
@@ -36,10 +37,10 @@ public class WeaponWheelController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            weaponWheelSelected = !weaponWheelSelected;
+            ToggleWeaponWheelOpen();
         }
 
-        if (weaponWheelSelected)
+        if (IsWeaponWheelOpen())
         {
             anim.SetBool("OpenWeaponWheel", true);
         }
@@ -77,6 +78,8 @@ public class WeaponWheelController : MonoBehaviour
                 selectedWeapon.sprite = Dagger;
                 SwitchWeapon(daggerWeapon);
                 break;
+            default:
+                break;
         }
     }
 
@@ -101,4 +104,25 @@ public class WeaponWheelController : MonoBehaviour
         newWeapon.enabled = true;
         combatSystem.SwitchWeapon(newWeapon);
     }
+
+    public void SetWeaponWheelOpen(bool open)
+    {
+        weaponWheelSelected = open;
+
+        for (int i = 0; i < gameObject.transform.childCount; i++)
+            gameObject.transform.GetChild(i).gameObject.SetActive(open);
+
+        gameObject.SetActive(true);
+    }
+
+    public void ToggleWeaponWheelOpen()
+    {
+        SetWeaponWheelOpen(!IsWeaponWheelOpen());
+    }
+
+    public bool IsWeaponWheelOpen()
+    {
+        return weaponWheelSelected;
+    }
 }
+

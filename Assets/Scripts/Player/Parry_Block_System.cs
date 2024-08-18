@@ -5,7 +5,6 @@ using UnityEngine;
 public class Parry_Block_System : MonoBehaviour
 {
     private Player_Movement movement;
-    private Player_health playerHealth;
 
     [Header("Parry Settings")]
     public int parryDamage;
@@ -30,7 +29,6 @@ public class Parry_Block_System : MonoBehaviour
     private void Start()
     {
         movement = GetComponent<Player_Movement>();
-        playerHealth = GetComponent<Player_health>();
 
         blockCollider = gameObject.AddComponent<CircleCollider2D>();
         blockCollider.radius = blockWindowRange;
@@ -127,7 +125,6 @@ public class Parry_Block_System : MonoBehaviour
     public void GetPariert(GameObject causer)
     {
         Collider2D[] parryEnemies = Physics2D.OverlapCircleAll(parryWindow.position, parryWindowRange, enemyLayer);
-        Debug.Log(parryEnemies.Length);
         if (parryEnemies.Length > 0)
         {
             foreach (Collider2D enemyCollider in parryEnemies)
@@ -169,13 +166,18 @@ public class Parry_Block_System : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (isBlocking && collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (isBlocking && collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
         {
             Vector2 pushDirection = (collision.transform.position - transform.position).normalized;
+
+            Debug.DrawRay(transform.position, pushDirection, Color.magenta);
+
             Rigidbody2D enemyRb = collision.GetComponent<Rigidbody2D>();
             if (enemyRb != null)
             {
+                //collision.transform.position += (Vector3)pushDirection * 0.15f;
                 enemyRb.AddForce(pushDirection * blockPushForce, ForceMode2D.Impulse);
+
             }
             ConsumeStaminaForBlocking(movement.staminaCostPerHit);
         }

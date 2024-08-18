@@ -6,16 +6,16 @@ public class Fist_Combat : WeaponBase
     [System.Serializable]
     public class FistCombatStats
     {
-        public int maxLightComboStep = 3;
-        public int maxHeavyComboStep = 3;
-        public float lightComboTimer = 1.5f;
-        public float heavyComboTimer = 2f;
+        public int maxLightComboStep;
+        public int maxHeavyComboStep;
+        public float lightComboTimer;
+        public float heavyComboTimer;
     }
 
     public FistCombatStats fistStats;
 
-    private int lightComboStep = 0;
-    private int heavyComboStep = 0;
+    private int lightComboStep = 1;
+    private int heavyComboStep = 1;
     private float lightComboTimerCurrent;
     private float heavyComboTimerCurrent;
 

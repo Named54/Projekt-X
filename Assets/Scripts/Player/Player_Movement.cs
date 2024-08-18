@@ -60,9 +60,12 @@ public class Player_Movement : MonoBehaviour
     public void MovePlayer()
     {
         if (!canMove || isDashing) return;
+        CombatSystem combatSystem = GetComponent<CombatSystem>();
+        if (!combatSystem.CanPerformAction(PlayerStateFlags.Attacking | PlayerStateFlags.Pushing)) return;
+
 
         Vector2 movement = Time.fixedDeltaTime * moveSpeed * moveDirection;
-        rb.MovePosition(rb.position + movement);
+        rb.position = rb.position + movement;
     }
     public void HandleDash()
     {
@@ -86,12 +89,12 @@ public class Player_Movement : MonoBehaviour
         float elapsedTime = 0;
         while (elapsedTime < dashDuration)
         {
-            rb.MovePosition(Vector2.Lerp(startPosition, endPosition, elapsedTime / dashDuration));
+            rb.position = Vector2.Lerp(startPosition, endPosition, elapsedTime / dashDuration);
             elapsedTime += Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
         }
 
-        rb.MovePosition(endPosition);
+        rb.position = endPosition;
         isDashing = false;
         canMove = true;
         dashCooldownTimer = dashCooldown;

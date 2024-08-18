@@ -8,9 +8,7 @@ public class BaseEnemies : MonoBehaviour
     protected int currentHealth; // Aktuelle Gesundheit des Feindes
 
     [Header("Knockback Settings")]
-    public float knockbackForce = 5f; // Stärke des Rückstoßes
-    public float knockbackDuration = 0.2f; // Dauer des Rückstoßes in Sekunden
-    protected bool isKnockedback = false; // Gibt an, ob der Feind gerade zurückgestoßen wird
+    protected KnockbackReceiver knockbackReceiver;
 
     [Header("Range Settings")]
     public float exitRange = 7f; // Reichweite, ab der der Feind den Spieler nicht mehr verfolgt
@@ -27,6 +25,7 @@ public class BaseEnemies : MonoBehaviour
     {
         currentHealth = maxHealth; // Setzt die aktuelle Gesundheit auf das Maximum
         rb = GetComponent<Rigidbody2D>(); // Holt die Rigidbody2D-Komponente
+        knockbackReceiver = GetComponent<KnockbackReceiver>();
         FindPlayer(); // Sucht den Spieler in der Szene
     }
 
@@ -39,10 +38,6 @@ public class BaseEnemies : MonoBehaviour
         else
         {
             CheckPlayerPosition(); // Überprüft die Position des Spielers
-            if (isPlayerDetected && !isAttacking && !isKnockedback)
-            {
-                MoveTowardsPlayer(); // Bewegt sich zum Spieler, wenn er erkannt wurde und nicht angreift oder zurückgestoßen wird
-            }
         }
     }
 
@@ -84,33 +79,26 @@ public class BaseEnemies : MonoBehaviour
     public virtual void TakeDamage(int damage, GameObject causer)
     {
         currentHealth -= damage;
-        ApplyKnockback(causer.transform.position);
+
+        knockbackReceiver.ApplyKnockback(causer.transform.position);
+        ResetEnemyState();
         if (currentHealth <= 0)
         {
             Die();
         }
     }
-
-    protected virtual void ApplyKnockback(Vector3 sourcePosition)
+    protected virtual void ResetEnemyState()
     {
-        if (rb != null && !isKnockedback)
-        {
-            StartCoroutine(KnockbackCoroutine(sourcePosition));
-        }
+        isPlayerDetected = false;
+        isAttacking = false;
+        // Reset any other state variables as needed
+        StartCoroutine(SearchForPlayerAfterDelay());
     }
-
-    protected IEnumerator KnockbackCoroutine(Vector3 sourcePosition)
+    protected IEnumerator SearchForPlayerAfterDelay()
     {
-        isKnockedback = true;
-        Vector2 knockbackDirection = (transform.position - sourcePosition).normalized;
-        rb.velocity = knockbackDirection * knockbackForce;
-
-        yield return new WaitForSeconds(knockbackDuration);
-
-        rb.velocity = Vector2.zero;
-        isKnockedback = false;
+        yield return new WaitForSeconds(1f); // Adjust delay as needed
+        FindPlayer();
     }
-
     protected virtual void Die()
     {
         Destroy(gameObject);

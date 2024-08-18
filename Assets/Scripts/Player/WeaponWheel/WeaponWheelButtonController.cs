@@ -11,11 +11,13 @@ public class WeaponWheelButtonController : MonoBehaviour
     public Image selectedWeapon;
     public bool selected = false;
     public TextMeshProUGUI weaponText;
+    private WeaponWheelController weaponWheelController;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        weaponWheelController = gameObject.GetComponentInParent<WeaponWheelController>();
 
     }
 
@@ -31,12 +33,14 @@ public class WeaponWheelButtonController : MonoBehaviour
     public void Selected()
     {
         selected = true;
-        WeaponWheelController.weaponID = ID;
+        weaponWheelController.weaponID = ID;
+        weaponWheelController.SetWeaponWheelOpen(false);
     }
     public void Deselected()
     {
         selected = false;
-        WeaponWheelController.weaponID = 0;
+        weaponWheelController.weaponID = 0;
+        weaponWheelController.SetWeaponWheelOpen(false);
     }
 
     public void HoverEnter()

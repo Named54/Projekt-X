@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Player_health : MonoBehaviour
 {
+    private KnockbackReceiver knockbackReceiver;
+
     [Header("UI")]
     [SerializeField] private Image healthBar;
 
@@ -11,53 +13,32 @@ public class Player_health : MonoBehaviour
     public int maxHealth;
     private int currentHealth;
 
-    [Header("Knockback Settings")]
-    public float knockbackForce = 5f;
-    public float knockbackDuration = 0.2f;
-
-    private bool isKnockedBack = false;
-
     [Header("Stun Settings")]
     public float stunDuration;
-    
-    private Rigidbody2D rb;
 
     private void Start()
     {
         currentHealth = maxHealth;
-        rb = GetComponent<Rigidbody2D>();
+        knockbackReceiver = GetComponent<KnockbackReceiver>();
     }
 
     public void TakeDamage(int Damage, GameObject causer)
     {
         currentHealth -= Damage;
-        ApplyKnockback(causer.transform.position);
+        UpdateHealthBar();
+        knockbackReceiver.ApplyKnockback(causer.transform.position);
         if (currentHealth <= 0)
         {
             Die();
         }
     }
-
-    private void ApplyKnockback(Vector3 sourcePosition)
+    private void UpdateHealthBar()
     {
-        if (rb != null && !isKnockedBack)
+        if (healthBar != null)
         {
-            StartCoroutine(KnockbackCoroutine(sourcePosition));
+            healthBar.fillAmount = (float)currentHealth / maxHealth;
         }
     }
-
-    private IEnumerator KnockbackCoroutine(Vector3 sourcePosition)
-    {
-        isKnockedBack = true;
-        Vector2 knockbackDirection = (transform.position - sourcePosition).normalized;
-        rb.velocity = knockbackDirection * knockbackForce;
-
-        yield return new WaitForSeconds(knockbackDuration);
-
-        rb.velocity = Vector2.zero;
-        isKnockedBack = false;
-    }
-
     private void Die()
     {
         Destroy(gameObject);
@@ -66,5 +47,6 @@ public class Player_health : MonoBehaviour
     {
         //Gibt Denn Player HP zurück
         currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
+        UpdateHealthBar();
     }
 }
