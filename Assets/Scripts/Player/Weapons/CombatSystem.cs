@@ -26,6 +26,7 @@ public class CombatSystem : MonoBehaviour
 
     public bool canAttack = true;
     public float attackRange = 1.5f;
+    private bool isBowEquipped = false;
 
     public LayerMask enemyLayer;
     private PlayerStateFlags playerState = PlayerStateFlags.None;
@@ -43,7 +44,7 @@ public class CombatSystem : MonoBehaviour
 
     private void HandleAttackInput()
     {
-        Parry_Block_System parry_Block_System = GetComponent<Parry_Block_System>(); // Referenz auf das Parry-Block-Syste
+        Parry_Block_System parry_Block_System = GetComponent<Parry_Block_System>(); // Referenz auf das Parry-Block-System
         if (!playerState.HasFlag(PlayerStateFlags.Attacking) && !isPushCooldown)
         {
             if (Input.GetMouseButtonDown(0) && currentWeapon.CanLightAttack() && !parry_Block_System.isParrying && !parry_Block_System.isBlocking)
@@ -64,11 +65,11 @@ public class CombatSystem : MonoBehaviour
         lockedMoveDirection = movement.moveDirection;
         bool isMoving = movement.moveDirection != Vector2.zero;
 
-        if (isMoving || currentComboStep == maxComboStep)
+        if (!isBowEquipped && (isMoving || currentComboStep == maxComboStep))
         {
             DashInAttackDirection();
         }
-        else
+        else if (!isBowEquipped)
         {
             PerformStationaryAttack();
         }
@@ -164,6 +165,7 @@ public class CombatSystem : MonoBehaviour
     {
         Debug.Log($"Switched weapon to {newWeapon.name}");
         currentWeapon = newWeapon;
+        isBowEquipped = newWeapon is Bow_Combat;
     }
 
     private void OnDrawGizmosSelected()

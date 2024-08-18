@@ -888,6 +888,7 @@ MonoBehaviour:
   Katana: {fileID: -7239271314811788858, guid: b8c737354e9760341913f08e6d1576e1, type: 3}
   Scythe: {fileID: -4753089838399975786, guid: b8c737354e9760341913f08e6d1576e1, type: 3}
   Dagger: {fileID: -3490566423909010356, guid: b8c737354e9760341913f08e6d1576e1, type: 3}
+  weaponID: 0
   selectedWeapon: {fileID: 1720560633}
   combatSystem: {fileID: 1791453835}
   fistWeapon: {fileID: 1764697210}
@@ -2621,6 +2622,13 @@ MonoBehaviour:
     criticalChance: 10
     cooldownLightAttack: 0.5
     cooldownHeavyAttack: 1
+  bowStats:
+    minArrowDamage: 5
+    maxArrowDamage: 10
+    maxChargeTime: 2
+    arrowShootSpeed: 5
+    arrowPrefab: {fileID: 1063979787518239656, guid: af56c338b3297a848afc875bf5f228ba, type: 3}
+    desiredRotation: 90
 --- !u!1 &1205452304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3457,7 +3465,7 @@ MonoBehaviour:
     criticalChance: 0.5
     cooldownLightAttack: 0.5
     cooldownHeavyAttack: 1
-  fistStats:
+  swordStats:
     maxLightComboStep: 0
     maxHeavyComboStep: 0
     lightComboTimer: 0

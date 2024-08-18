@@ -18,7 +18,7 @@ public class FrogEnemy : BaseEnemies
     [Header("Jump Attack Settings")]
     public float jumpPrepareTime = 2f;
     public float minJumpSpeed = 5f;
-    public float maxJumpSpeed = 15f;
+    public float maxJumpSpeed = 8f;
     public float maxJumpDistance = 10f;
 
     private Vector2 targetJumpPosition;
@@ -151,7 +151,7 @@ public class FrogEnemy : BaseEnemies
         yield return new WaitForSeconds(attackCooldown);
         isAttacking = false;
     }
-    /*protected override void ResetEnemyState()
+    protected override void ResetEnemyState()
       {
           base.ResetEnemyState();
           isJumping = false;
@@ -170,7 +170,7 @@ public class FrogEnemy : BaseEnemies
           {
               StartCoroutine(PrepareAndJump());
           }
-      }*/
+      }
     // Überschreibe die OnDrawGizmosSelected-Methode, um den Angriffsradius und die Zielposition anzuzeigen
     protected override void OnDrawGizmosSelected()
     {

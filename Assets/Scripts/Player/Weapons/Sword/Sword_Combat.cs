@@ -5,7 +5,7 @@ using UnityEngine;
 public class Sword_Combat : WeaponBase
 {
     [System.Serializable]
-    public class FistCombatStats
+    public class SwordCombatStats
     {
         public int maxLightComboStep;
         public int maxHeavyComboStep;
@@ -13,7 +13,7 @@ public class Sword_Combat : WeaponBase
         public float heavyComboTimer;
     }
 
-    public FistCombatStats fistStats;
+    public SwordCombatStats swordStats;
 
     private int lightComboStep = 1;
     private int heavyComboStep = 1;
@@ -68,21 +68,21 @@ public class Sword_Combat : WeaponBase
     private void PerformLightCombo()
     {
         lightComboStep++;
-        if (lightComboStep > fistStats.maxLightComboStep)
+        if (lightComboStep > swordStats.maxLightComboStep)
         {
             lightComboStep = 1;
         }
-        lightComboTimerCurrent = fistStats.lightComboTimer;
+        lightComboTimerCurrent = swordStats.lightComboTimer;
     }
 
     private void PerformHeavyCombo()
     {
         heavyComboStep++;
-        if (heavyComboStep > fistStats.maxHeavyComboStep)
+        if (heavyComboStep > swordStats.maxHeavyComboStep)
         {
             heavyComboStep = 1;
         }
-        heavyComboTimerCurrent = fistStats.heavyComboTimer;
+        heavyComboTimerCurrent = swordStats.heavyComboTimer;
     }
 
     public override void UpdateCooldowns()

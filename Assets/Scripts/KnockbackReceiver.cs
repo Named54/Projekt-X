@@ -27,9 +27,6 @@ public class KnockbackReceiver : MonoBehaviour
         Vector2 knockbackDirection = (transform.position - (Vector3)sourcePosition).normalized;
         rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
         rb.WakeUp();
-        //rb.velocity = Vector2.up * 100000f;
-        Debug.Log($"Applied knockback {knockbackDirection * knockbackForce} on object {gameObject.name} for {knockbackDuration} seconds. (rb name: {rb.name})");
-
         yield return new WaitForSeconds(knockbackDuration);
 
         rb.velocity = Vector2.zero;
