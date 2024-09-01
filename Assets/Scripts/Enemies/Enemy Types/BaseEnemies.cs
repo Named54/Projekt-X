@@ -1,8 +1,14 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
+using System;
 
 public class BaseEnemies : MonoBehaviour
 {
+    [Header("Experience Settings")]
+    public int experienceValue = 50;
+    private PlayerLevelUpSystem playerLevelSystem;
+
     [Header("Health Settings")]
     public int maxHealth; // Maximale Gesundheit des Feindes
     protected int currentHealth; // Aktuelle Gesundheit des Feindes
@@ -26,6 +32,7 @@ public class BaseEnemies : MonoBehaviour
         currentHealth = maxHealth; // Setzt die aktuelle Gesundheit auf das Maximum
         rb = GetComponent<Rigidbody2D>(); // Holt die Rigidbody2D-Komponente
         knockbackReceiver = GetComponent<KnockbackReceiver>();
+        playerLevelSystem = FindFirstObjectByType<PlayerLevelUpSystem>();
         FindPlayer(); // Sucht den Spieler in der Szene
     }
 
@@ -70,12 +77,15 @@ public class BaseEnemies : MonoBehaviour
 
     protected virtual void MoveTowardsPlayer()
     {
-        // Diese Methode wird in abgeleiteten Klassen überschrieben
-        // Beispiel für eine einfache Bewegung zum Spieler:
-        // Vector2 direction = (player.position - transform.position).normalized;
-        // rb.MovePosition(rb.position + direction * Time.deltaTime * moveSpeed);
+        // Bewegt den FrogEnemy langsam zum Spieler
+        /*
+        if (player != null && !isJumping && !isOnCooldown)
+        {
+            Vector2 direction = (player.position - transform.position).normalized;
+            rb.position += direction * (Time.deltaTime * jumpSpeed * 0.5f);
+        }
+        */
     }
-
     public virtual void TakeDamage(int damage, GameObject causer)
     {
         currentHealth -= damage;
@@ -101,6 +111,7 @@ public class BaseEnemies : MonoBehaviour
     }
     protected virtual void Die()
     {
+        playerLevelSystem.GainExperience(experienceValue);
         Destroy(gameObject);
     }
 

@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class FrogEnemy : BaseEnemies
 {
-    [Header("Dash Settings")]
+    [Header("Jump Settings")]
     public float jumpSpeed = 10f; // Geschwindigkeit des Sprungangriffs
-    public float jumpCooldown = 2f; // Abklingzeit zwischen Sprüngen
-    public float jumpDuration = 0.5f; // Dauer des Sprungs
-    
+    public float jumpPrepareTime = 2f;
+
     private bool isJumping = false; // Gibt an, ob der Frosch gerade springt
     private bool isOnCooldown = false; // Gibt an, ob der Sprung abkühlt
 
@@ -15,11 +14,6 @@ public class FrogEnemy : BaseEnemies
     public int attackDamage = 2; // Schaden, den der Feind dem Spieler zufügt
     public float attackCooldown = 2f; // Abklingzeit zwischen Angriffen
 
-    [Header("Jump Attack Settings")]
-    public float jumpPrepareTime = 2f;
-    public float minJumpSpeed = 5f;
-    public float maxJumpSpeed = 8f;
-    public float maxJumpDistance = 10f;
 
     private Vector2 targetJumpPosition;
     private bool isPreparing = false;
@@ -28,26 +22,53 @@ public class FrogEnemy : BaseEnemies
     protected override void Update()
     {
         base.Update(); // Ruft die Update-Methode der Basisklasse auf
-
-        // Wenn der Spieler erkannt wurde, der FrogEnemy nicht springt, nicht in einer Abklingzeit ist und nicht zurückgeschlagen wird, startet der FrogEnemy einen Sprungangriff
-        if (isPlayerDetected && !isJumping && !isOnCooldown && !isPreparing)
-        {
-            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-            if (distanceToPlayer <= detectionRange)
-            {
-                StartCoroutine(PrepareAndJump());
-            }
-        }
+        CheckPlayerPosition();
     }
 
-    // Bewegt den FrogEnemy langsam zum Spieler
-    protected override void MoveTowardsPlayer()
+    protected override void CheckPlayerPosition()
     {
-        if (player != null && !isJumping && !isOnCooldown)
+        base.CheckPlayerPosition();
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
+        // Wenn der Spieler erkannt wurde und innerhalb des Exitradius ist
+        if (isPlayerDetected && distanceToPlayer <= exitRange)
         {
-            Vector2 direction = (player.position - transform.position).normalized;
-            rb.MovePosition(rb.position + direction * Time.deltaTime * jumpSpeed * 0.5f);
+            // Wenn der Spieler innerhalb des Detektionsradius ist, springt der FrogEnemy normal zum Spieler
+            if (distanceToPlayer <= detectionRange)
+            {
+                if (!isJumping && !isOnCooldown && !isPreparing)
+                {
+                    StartCoroutine(PrepareAndJump());
+                }
+            }
+            // Wenn der Spieler außerhalb des Detektionsradius, aber innerhalb des Exitradius ist, springt der FrogEnemy zum Rand des Detektionsradius in Richtung des Spielers
+            else
+            {
+                if (!isJumping && !isOnCooldown && !isPreparing)
+                {
+                    Vector2 targetPosition = transform.position + (player.position - transform.position).normalized * detectionRange;
+                    StartCoroutine(PrepareAndJumpToPosition(targetPosition));
+                }
+            }
         }
+        // Wenn der Spieler außerhalb des Exitradius ist, verliert der FrogEnemy ihn aus den Augen
+        else if (distanceToPlayer > exitRange)
+        {
+            isPlayerDetected = false;
+        }
+    }
+    private IEnumerator PrepareAndJumpToPosition(Vector2 targetPosition)
+    {
+        isPreparing = true;
+
+        // Zeige Vorbereitung an (z.B. durch Animation oder visuellen Effekt)
+        Debug.Log("FrogEnemy is preparing to jump to position!");
+
+        yield return new WaitForSeconds(jumpPrepareTime);
+
+        targetJumpPosition = targetPosition;
+        StartCoroutine(PerformJumpAttack());
+        isPreparing = false;
     }
     private IEnumerator PrepareAndJump()
     {
@@ -73,11 +94,9 @@ public class FrogEnemy : BaseEnemies
         isJumping = true;
         Vector2 jumpStartPosition = transform.position;
         Vector2 jumpDirection = (targetJumpPosition - jumpStartPosition).normalized;
-        float jumpDistance = Vector2.Distance(jumpStartPosition, targetJumpPosition);
 
         // Berechne die Sprunggeschwindigkeit basierend auf der Entfernung
-        float jumpSpeed = Mathf.Lerp(minJumpSpeed, maxJumpSpeed, jumpDistance / maxJumpDistance);
-
+        float jumpDistance = Vector2.Distance(jumpStartPosition, targetJumpPosition);
         float jumpDuration = jumpDistance / jumpSpeed;
         float elapsedTime = 0f;
 
@@ -91,16 +110,22 @@ public class FrogEnemy : BaseEnemies
             Vector2 newPosition = Vector2.Lerp(jumpStartPosition, targetJumpPosition, t);
             newPosition.y += height;
 
-            rb.MovePosition(newPosition);
+            rb.position = newPosition;
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
-        rb.MovePosition(targetJumpPosition);
+        rb.position = targetJumpPosition;
         isJumping = false;
 
         // Überprüfe Kollision mit dem Spieler
+        CheckPlayerCollision();
+
+        // Starte Abklingzeit
+        StartCoroutine(AttackCooldown());
+    }
+    private void CheckPlayerCollision()
+    {
         Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, attackRange, LayerMask.GetMask("Player"));
         if (playerCollider != null)
         {
@@ -125,11 +150,7 @@ public class FrogEnemy : BaseEnemies
                 }
             }
         }
-
-        // Starte Abklingzeit
-        StartCoroutine(AttackCooldown());
     }
-
 
     // Überschreibt die TakeDamage-Methode der Basisklasse
     public override void TakeDamage(int damage, GameObject causer)
@@ -178,12 +199,5 @@ public class FrogEnemy : BaseEnemies
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
-
-        if (isPreparing)
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawLine(transform.position, targetJumpPosition);
-            Gizmos.DrawWireSphere(targetJumpPosition, 0.5f);
-        }
     }
 }

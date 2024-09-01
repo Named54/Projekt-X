@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,8 +13,10 @@ public class WeaponWheelController : MonoBehaviour
     public Sprite Dagger;
     public int weaponID;
     public Image selectedWeapon;
+    
     private bool weaponWheelSelected = false;
-
+    private bool weaponSwitchRequested = false;
+    private WeaponBase newWeapon = null;
     // Referenz zum CombatSystem
     public CombatSystem combatSystem;
 
@@ -39,7 +40,15 @@ public class WeaponWheelController : MonoBehaviour
         {
             ToggleWeaponWheelOpen();
         }
-
+        /* Direkter Waffenwechsel, wenn Spieler eine Taste drückt
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SelectWeapon(1); // Faust-Waffe
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SelectWeapon(2); // Schwert
+        }*/
         if (IsWeaponWheelOpen())
         {
             anim.SetBool("OpenWeaponWheel", true);
@@ -47,8 +56,14 @@ public class WeaponWheelController : MonoBehaviour
         else
         {
             anim.SetBool("OpenWeaponWheel", false);
+            //canAttack = true;
         }
-
+        if (weaponSwitchRequested)
+        {
+            SwitchWeapon(newWeapon);
+            weaponSwitchRequested = false;
+            newWeapon = null;
+        }
         switch (weaponID)
         {
             case 0:
@@ -104,15 +119,35 @@ public class WeaponWheelController : MonoBehaviour
         newWeapon.enabled = true;
         combatSystem.SwitchWeapon(newWeapon);
     }
-
+    public void SelectWeapon(int weaponId)
+    {
+        weaponID = weaponId;
+        SwitchWeapon(GetWeaponByID(weaponId));
+    }
+    private WeaponBase GetWeaponByID(int weaponId)
+    {
+        switch (weaponId)
+        {
+            case 1: return fistWeapon;
+            case 2: return swordWeapon;
+            case 3: return bowWeapon;
+            case 4: return katanaWeapon;
+            case 5: return scytheWeapon;
+            case 6: return daggerWeapon;
+            default: return null;
+        }
+    }
     public void SetWeaponWheelOpen(bool open)
     {
         weaponWheelSelected = open;
-
         for (int i = 0; i < gameObject.transform.childCount; i++)
             gameObject.transform.GetChild(i).gameObject.SetActive(open);
-
         gameObject.SetActive(true);
+
+        if (open)
+            InputManager.PushEnterUIMode();
+        else
+            InputManager.PopEnterUIMode();
     }
 
     public void ToggleWeaponWheelOpen()

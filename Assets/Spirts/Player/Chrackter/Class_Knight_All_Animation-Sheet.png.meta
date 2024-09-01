@@ -1,0 +1,1987 @@
+fileFormatVersion: 2
+guid: ce9ee507bd834474198c0af279fdfd43
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 242221075440695613
+    second: Class_Knight_All_Animation-Sheet_0
+  - first:
+      213: 424474974343916759
+    second: Class_Knight_All_Animation-Sheet_1
+  - first:
+      213: 7893456203830493039
+    second: Class_Knight_All_Animation-Sheet_2
+  - first:
+      213: 8908311863693996184
+    second: Class_Knight_All_Animation-Sheet_3
+  - first:
+      213: -4676282051636195224
+    second: Class_Knight_All_Animation-Sheet_4
+  - first:
+      213: -6625590644044503313
+    second: Class_Knight_All_Animation-Sheet_5
+  - first:
+      213: 2669745892327924101
+    second: Class_Knight_All_Animation-Sheet_6
+  - first:
+      213: -3529387205973607643
+    second: Class_Knight_All_Animation-Sheet_7
+  - first:
+      213: 4665769944089211582
+    second: Class_Knight_All_Animation-Sheet_8
+  - first:
+      213: 3141380551665702545
+    second: Class_Knight_All_Animation-Sheet_9
+  - first:
+      213: -5559443146204697078
+    second: Class_Knight_All_Animation-Sheet_10
+  - first:
+      213: -8265436376820386034
+    second: Class_Knight_All_Animation-Sheet_11
+  - first:
+      213: -4502730214291257123
+    second: Class_Knight_All_Animation-Sheet_12
+  - first:
+      213: 7267447428730834089
+    second: Class_Knight_All_Animation-Sheet_13
+  - first:
+      213: 1909792191158688429
+    second: Class_Knight_All_Animation-Sheet_14
+  - first:
+      213: 4834741776933779969
+    second: Class_Knight_All_Animation-Sheet_15
+  - first:
+      213: -8409264058348743471
+    second: Class_Knight_All_Animation-Sheet_16
+  - first:
+      213: -7763326816855597442
+    second: Class_Knight_All_Animation-Sheet_17
+  - first:
+      213: 2648843871964239593
+    second: Class_Knight_All_Animation-Sheet_18
+  - first:
+      213: -2348949618156014893
+    second: Class_Knight_All_Animation-Sheet_19
+  - first:
+      213: 7958020615089130297
+    second: Class_Knight_All_Animation-Sheet_20
+  - first:
+      213: -7294600644549403254
+    second: Class_Knight_All_Animation-Sheet_21
+  - first:
+      213: 3777017778764425649
+    second: Class_Knight_All_Animation-Sheet_22
+  - first:
+      213: -5221482377403745303
+    second: Class_Knight_All_Animation-Sheet_23
+  - first:
+      213: -360580522109835862
+    second: Class_Knight_All_Animation-Sheet_24
+  - first:
+      213: -5019557337155884196
+    second: Class_Knight_All_Animation-Sheet_25
+  - first:
+      213: -7311503449157165393
+    second: Class_Knight_All_Animation-Sheet_26
+  - first:
+      213: -4891724495206749197
+    second: Class_Knight_All_Animation-Sheet_27
+  - first:
+      213: -2057242274212861691
+    second: Class_Knight_All_Animation-Sheet_28
+  - first:
+      213: -823333326131181156
+    second: Class_Knight_All_Animation-Sheet_29
+  - first:
+      213: 6268558002840217998
+    second: Class_Knight_All_Animation-Sheet_30
+  - first:
+      213: 6955146597265295356
+    second: Class_Knight_All_Animation-Sheet_31
+  - first:
+      213: 7557184736501636368
+    second: Class_Knight_All_Animation-Sheet_32
+  - first:
+      213: -1221677747510786555
+    second: Class_Knight_All_Animation-Sheet_33
+  - first:
+      213: 7738648113957703867
+    second: Class_Knight_All_Animation-Sheet_34
+  - first:
+      213: -850643609696939139
+    second: Class_Knight_All_Animation-Sheet_35
+  - first:
+      213: 196196230677552278
+    second: Class_Knight_All_Animation-Sheet_36
+  - first:
+      213: -4350101333898685838
+    second: Class_Knight_All_Animation-Sheet_37
+  - first:
+      213: -2179867774674995785
+    second: Class_Knight_All_Animation-Sheet_38
+  - first:
+      213: 5443167826062019206
+    second: Class_Knight_All_Animation-Sheet_39
+  - first:
+      213: 6695729526887495763
+    second: Class_Knight_All_Animation-Sheet_40
+  - first:
+      213: 1653018995792192144
+    second: Class_Knight_All_Animation-Sheet_41
+  - first:
+      213: -6060207671293520712
+    second: Class_Knight_All_Animation-Sheet_42
+  - first:
+      213: -5842407952717618515
+    second: Class_Knight_All_Animation-Sheet_43
+  - first:
+      213: 4449338274979677013
+    second: Class_Knight_All_Animation-Sheet_44
+  - first:
+      213: -9087963395984712899
+    second: Class_Knight_All_Animation-Sheet_45
+  - first:
+      213: -4073026356290992100
+    second: Class_Knight_All_Animation-Sheet_46
+  - first:
+      213: 5212258200014119378
+    second: Class_Knight_All_Animation-Sheet_47
+  - first:
+      213: 5780236201463439743
+    second: Class_Knight_All_Animation-Sheet_48
+  - first:
+      213: -1247913402270103549
+    second: Class_Knight_All_Animation-Sheet_49
+  - first:
+      213: 6364015944934914629
+    second: Class_Knight_All_Animation-Sheet_50
+  - first:
+      213: 7767316601007303374
+    second: Class_Knight_All_Animation-Sheet_51
+  - first:
+      213: -507150873787016245
+    second: Class_Knight_All_Animation-Sheet_52
+  - first:
+      213: 3601814393567119949
+    second: Class_Knight_All_Animation-Sheet_53
+  - first:
+      213: 2614719169531286663
+    second: Class_Knight_All_Animation-Sheet_54
+  - first:
+      213: -7721165511954443720
+    second: Class_Knight_All_Animation-Sheet_55
+  - first:
+      213: 3232519406463871104
+    second: Class_Knight_All_Animation-Sheet_56
+  - first:
+      213: -6451983196140769311
+    second: Class_Knight_All_Animation-Sheet_57
+  - first:
+      213: 2014407962625419827
+    second: Class_Knight_All_Animation-Sheet_58
+  - first:
+      213: -3381268172458412576
+    second: Class_Knight_All_Animation-Sheet_59
+  - first:
+      213: 2774561980923745537
+    second: Class_Knight_All_Animation-Sheet_60
+  - first:
+      213: 7059027521203423041
+    second: Class_Knight_All_Animation-Sheet_61
+  - first:
+      213: -3275707081599953205
+    second: Class_Knight_All_Animation-Sheet_62
+  - first:
+      213: -8141514673047328417
+    second: Class_Knight_All_Animation-Sheet_63
+  - first:
+      213: 1465422789611070289
+    second: Class_Knight_All_Animation-Sheet_64
+  - first:
+      213: -9075834471365444702
+    second: Class_Knight_All_Animation-Sheet_65
+  - first:
+      213: -7101877335802961143
+    second: Class_Knight_All_Animation-Sheet_66
+  - first:
+      213: 2667375897070716922
+    second: Class_Knight_All_Animation-Sheet_67
+  - first:
+      213: 18404820282505938
+    second: Class_Knight_All_Animation-Sheet_68
+  - first:
+      213: -4093244819077948764
+    second: Class_Knight_All_Animation-Sheet_69
+  - first:
+      213: 527695274253726201
+    second: Class_Knight_All_Animation-Sheet_70
+  - first:
+      213: -468914099210655871
+    second: Class_Knight_All_Animation-Sheet_71
+  - first:
+      213: -3465422089047411453
+    second: Class_Knight_All_Animation-Sheet_72
+  - first:
+      213: 7736353543249835672
+    second: Class_Knight_All_Animation-Sheet_73
+  - first:
+      213: -3791987942950027258
+    second: Class_Knight_All_Animation-Sheet_74
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3971c6e8ca8c5300800000000000000
+      internalID: 242221075440695613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dcefcd7db904e500800000000000000
+      internalID: 424474974343916759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6f7b6798903b8d60800000000000000
+      internalID: 7893456203830493039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 890f0e7117ea0ab70800000000000000
+      internalID: 8908311863693996184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86090b200428a1fb0800000000000000
+      internalID: -4676282051636195224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe66392c96c2d04a0800000000000000
+      internalID: -6625590644044503313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 581a3c08eb7dc0520800000000000000
+      internalID: 2669745892327924101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52b72212909150fc0800000000000000
+      internalID: -3529387205973607643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb2b1293b0520c040800000000000000
+      internalID: 4665769944089211582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 196da5ec7fc689b20800000000000000
+      internalID: 3141380551665702545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0e2d79e9e3e8d2b0800000000000000
+      internalID: -5559443146204697078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e07770e48654b4d80800000000000000
+      internalID: -8265436376820386034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd840c10ab61381c0800000000000000
+      internalID: -4502730214291257123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9acc35d8ee82bd460800000000000000
+      internalID: 7267447428730834089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daa14dc11e1f08a10800000000000000
+      internalID: 1909792191158688429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10af0e2d704781340800000000000000
+      internalID: 4834741776933779969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d4d9a3a4ea4c4b80800000000000000
+      internalID: -8409264058348743471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7ede06546f134490800000000000000
+      internalID: -7763326816855597442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e616e5a77592c420800000000000000
+      internalID: 2648843871964239593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d2758e74cad66fd0800000000000000
+      internalID: -2348949618156014893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93b8f950691907e60800000000000000
+      internalID: 7958020615089130297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d1c4bbc5f54ca90800000000000000
+      internalID: -7294600644549403254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b9a69588a9aa6430800000000000000
+      internalID: 3777017778764425649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eb33ed31719987b0800000000000000
+      internalID: -5221482377403745303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa5e7b2fce5fefaf0800000000000000
+      internalID: -360580522109835862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5b2e155233f65ab0800000000000000
+      internalID: -5019557337155884196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fae91fad952588a90800000000000000
+      internalID: -7311503449157165393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fbef143d7a1d1cb0800000000000000
+      internalID: -4891724495206749197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50920a42d053373e0800000000000000
+      internalID: -2057242274212861691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c99c53cb3bee294f0800000000000000
+      internalID: -823333326131181156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8929359a446ef650800000000000000
+      internalID: 6268558002840217998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf7c3c2faf4a58060800000000000000
+      internalID: 6955146597265295356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01d1f296a7380e860800000000000000
+      internalID: 7557184736501636368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 506ce95bf8abb0fe0800000000000000
+      internalID: -1221677747510786555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb012326573356b60800000000000000
+      internalID: 7738648113957703867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d73de85d428e134f0800000000000000
+      internalID: -850643609696939139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69c5ecbae6709b200800000000000000
+      internalID: 196196230677552278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 272140872e551a3c0800000000000000
+      internalID: -4350101333898685838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b5fc21fecd8fb1e0800000000000000
+      internalID: -2179867774674995785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a03457c440a8b40800000000000000
+      internalID: 5443167826062019206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 358393a77820cec50800000000000000
+      internalID: 6695729526887495763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 092aa23c404b0f610800000000000000
+      internalID: 1653018995792192144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b4d3773b31d5eba0800000000000000
+      internalID: -6060207671293520712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da26951ebe89beea0800000000000000
+      internalID: -5842407952717618515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55386b566993fbd30800000000000000
+      internalID: 4449338274979677013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3b1492017111e180800000000000000
+      internalID: -9087963395984712899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c18c878db14b977c0800000000000000
+      internalID: -4073026356290992100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d165799739a55840800000000000000
+      internalID: 5212258200014119378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f71e4124336873050800000000000000
+      internalID: 5780236201463439743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 308cd335f558eaee0800000000000000
+      internalID: -1247913402270103549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54a74cea8c6815850800000000000000
+      internalID: 6364015944934914629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecae80dab4d0bcb60800000000000000
+      internalID: 7767316601007303374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcb5560a7fc36f8f0800000000000000
+      internalID: -507150873787016245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4a05739b173cf130800000000000000
+      internalID: 3601814393567119949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78411573b39594420800000000000000
+      internalID: 2614719169531286663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83255f710e8e8d490800000000000000
+      internalID: -7721165511954443720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 088e5d706473cdc20800000000000000
+      internalID: 3232519406463871104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ef6d399773f576a0800000000000000
+      internalID: -6451983196140769311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33aa1058e5d94fb10800000000000000
+      internalID: 2014407962625419827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e5384a03825311d0800000000000000
+      internalID: -3381268172458412576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1059340eb69318620800000000000000
+      internalID: 2774561980923745537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14749055124b6f160800000000000000
+      internalID: 7059027521203423041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc6d005c3c95a82d0800000000000000
+      internalID: -3275707081599953205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f59226b5a87830f80800000000000000
+      internalID: -8141514673047328417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 153a784534a365410800000000000000
+      internalID: 1465422789611070289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ab740652a82c0280800000000000000
+      internalID: -9075834471365444702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9032111c030117d90800000000000000
+      internalID: -7101877335802961143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af7c65bfe3c640520800000000000000
+      internalID: 2667375897070716922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2daf7172613614000800000000000000
+      internalID: 18404820282505938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa9624268fd137c0800000000000000
+      internalID: -4093244819077948764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f1bb8b5e00c25700800000000000000
+      internalID: 527695274253726201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18760667c151e79f0800000000000000
+      internalID: -468914099210655871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 305798978f858efc0800000000000000
+      internalID: -3465422089047411453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 896bd320f8c0d5b60800000000000000
+      internalID: 7736353543249835672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Class_Knight_All_Animation-Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60046e38e07206bc0800000000000000
+      internalID: -3791987942950027258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 915fdb0201f3dc948a3fdac9bccc8bf3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Class_Knight_All_Animation-Sheet_0: 242221075440695613
+      Class_Knight_All_Animation-Sheet_1: 424474974343916759
+      Class_Knight_All_Animation-Sheet_10: -5559443146204697078
+      Class_Knight_All_Animation-Sheet_11: -8265436376820386034
+      Class_Knight_All_Animation-Sheet_12: -4502730214291257123
+      Class_Knight_All_Animation-Sheet_13: 7267447428730834089
+      Class_Knight_All_Animation-Sheet_14: 1909792191158688429
+      Class_Knight_All_Animation-Sheet_15: 4834741776933779969
+      Class_Knight_All_Animation-Sheet_16: -8409264058348743471
+      Class_Knight_All_Animation-Sheet_17: -7763326816855597442
+      Class_Knight_All_Animation-Sheet_18: 2648843871964239593
+      Class_Knight_All_Animation-Sheet_19: -2348949618156014893
+      Class_Knight_All_Animation-Sheet_2: 7893456203830493039
+      Class_Knight_All_Animation-Sheet_20: 7958020615089130297
+      Class_Knight_All_Animation-Sheet_21: -7294600644549403254
+      Class_Knight_All_Animation-Sheet_22: 3777017778764425649
+      Class_Knight_All_Animation-Sheet_23: -5221482377403745303
+      Class_Knight_All_Animation-Sheet_24: -360580522109835862
+      Class_Knight_All_Animation-Sheet_25: -5019557337155884196
+      Class_Knight_All_Animation-Sheet_26: -7311503449157165393
+      Class_Knight_All_Animation-Sheet_27: -4891724495206749197
+      Class_Knight_All_Animation-Sheet_28: -2057242274212861691
+      Class_Knight_All_Animation-Sheet_29: -823333326131181156
+      Class_Knight_All_Animation-Sheet_3: 8908311863693996184
+      Class_Knight_All_Animation-Sheet_30: 6268558002840217998
+      Class_Knight_All_Animation-Sheet_31: 6955146597265295356
+      Class_Knight_All_Animation-Sheet_32: 7557184736501636368
+      Class_Knight_All_Animation-Sheet_33: -1221677747510786555
+      Class_Knight_All_Animation-Sheet_34: 7738648113957703867
+      Class_Knight_All_Animation-Sheet_35: -850643609696939139
+      Class_Knight_All_Animation-Sheet_36: 196196230677552278
+      Class_Knight_All_Animation-Sheet_37: -4350101333898685838
+      Class_Knight_All_Animation-Sheet_38: -2179867774674995785
+      Class_Knight_All_Animation-Sheet_39: 5443167826062019206
+      Class_Knight_All_Animation-Sheet_4: -4676282051636195224
+      Class_Knight_All_Animation-Sheet_40: 6695729526887495763
+      Class_Knight_All_Animation-Sheet_41: 1653018995792192144
+      Class_Knight_All_Animation-Sheet_42: -6060207671293520712
+      Class_Knight_All_Animation-Sheet_43: -5842407952717618515
+      Class_Knight_All_Animation-Sheet_44: 4449338274979677013
+      Class_Knight_All_Animation-Sheet_45: -9087963395984712899
+      Class_Knight_All_Animation-Sheet_46: -4073026356290992100
+      Class_Knight_All_Animation-Sheet_47: 5212258200014119378
+      Class_Knight_All_Animation-Sheet_48: 5780236201463439743
+      Class_Knight_All_Animation-Sheet_49: -1247913402270103549
+      Class_Knight_All_Animation-Sheet_5: -6625590644044503313
+      Class_Knight_All_Animation-Sheet_50: 6364015944934914629
+      Class_Knight_All_Animation-Sheet_51: 7767316601007303374
+      Class_Knight_All_Animation-Sheet_52: -507150873787016245
+      Class_Knight_All_Animation-Sheet_53: 3601814393567119949
+      Class_Knight_All_Animation-Sheet_54: 2614719169531286663
+      Class_Knight_All_Animation-Sheet_55: -7721165511954443720
+      Class_Knight_All_Animation-Sheet_56: 3232519406463871104
+      Class_Knight_All_Animation-Sheet_57: -6451983196140769311
+      Class_Knight_All_Animation-Sheet_58: 2014407962625419827
+      Class_Knight_All_Animation-Sheet_59: -3381268172458412576
+      Class_Knight_All_Animation-Sheet_6: 2669745892327924101
+      Class_Knight_All_Animation-Sheet_60: 2774561980923745537
+      Class_Knight_All_Animation-Sheet_61: 7059027521203423041
+      Class_Knight_All_Animation-Sheet_62: -3275707081599953205
+      Class_Knight_All_Animation-Sheet_63: -8141514673047328417
+      Class_Knight_All_Animation-Sheet_64: 1465422789611070289
+      Class_Knight_All_Animation-Sheet_65: -9075834471365444702
+      Class_Knight_All_Animation-Sheet_66: -7101877335802961143
+      Class_Knight_All_Animation-Sheet_67: 2667375897070716922
+      Class_Knight_All_Animation-Sheet_68: 18404820282505938
+      Class_Knight_All_Animation-Sheet_69: -4093244819077948764
+      Class_Knight_All_Animation-Sheet_7: -3529387205973607643
+      Class_Knight_All_Animation-Sheet_70: 527695274253726201
+      Class_Knight_All_Animation-Sheet_71: -468914099210655871
+      Class_Knight_All_Animation-Sheet_72: -3465422089047411453
+      Class_Knight_All_Animation-Sheet_73: 7736353543249835672
+      Class_Knight_All_Animation-Sheet_74: -3791987942950027258
+      Class_Knight_All_Animation-Sheet_8: 4665769944089211582
+      Class_Knight_All_Animation-Sheet_9: 3141380551665702545
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

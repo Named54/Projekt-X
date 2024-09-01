@@ -56,8 +56,11 @@ public class Fist_Combat : WeaponBase
 
     private void PerformLightCombo()
     {
-        lightComboStep++;
-        if (lightComboStep > fistStats.maxLightComboStep)
+        if (lightComboStep < fistStats.maxLightComboStep)
+        {
+            lightComboStep++;
+        }
+        else
         {
             lightComboStep = 1;
         }
@@ -66,8 +69,11 @@ public class Fist_Combat : WeaponBase
 
     private void PerformHeavyCombo()
     {
-        heavyComboStep++;
-        if (heavyComboStep > fistStats.maxHeavyComboStep)
+        if (heavyComboStep < fistStats.maxHeavyComboStep)
+        {
+            heavyComboStep++;
+        }
+        else
         {
             heavyComboStep = 1;
         }
@@ -79,8 +85,8 @@ public class Fist_Combat : WeaponBase
         base.UpdateCooldowns();
         if (lightComboTimerCurrent > 0) lightComboTimerCurrent -= Time.deltaTime;
         if (heavyComboTimerCurrent > 0) heavyComboTimerCurrent -= Time.deltaTime;
-        if (lightComboTimerCurrent <= 0) lightComboStep = 0;
-        if (heavyComboTimerCurrent <= 0) heavyComboStep = 0;
+        if (lightComboTimerCurrent <= 0) lightComboStep = 1;
+        if (heavyComboTimerCurrent <= 0) heavyComboStep = 1;
     }
 
     // Methoden für freigeschaltete Fähigkeiten

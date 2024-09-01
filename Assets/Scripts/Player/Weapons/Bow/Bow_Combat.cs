@@ -16,11 +16,9 @@ public class Bow_Combat : WeaponBase
     }
     public BowCombatStats bowStats;
 
-    private bool isChargingShot = false;
     private float chargeStartTime;
-
+    private bool isChargingShot = false;
     private WeaponWheelController weaponWheel;
-
     private void Start()
     {
         weaponWheel = FindFirstObjectByType<WeaponWheelController>();
@@ -40,25 +38,26 @@ public class Bow_Combat : WeaponBase
     private void AimAndShoot()
     {
         if (!enabled) return;
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 shootingDirection = (mousePosition - transform.position).normalized;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Mouse1))
+        if (InputManager.GetKeyDown(KeyCode.Mouse0) || InputManager.GetKeyDown(KeyCode.Mouse1))
         {
             isChargingShot = true;
             chargeStartTime = Time.time;
         }
 
-        if ((Input.GetKeyUp(KeyCode.Mouse0) || Input.GetKeyUp(KeyCode.Mouse1)) && isChargingShot)
+        if ((InputManager.GetKeyUp(KeyCode.Mouse0) || InputManager.GetKeyUp(KeyCode.Mouse1)) && isChargingShot)
         {
             float chargeDuration = Time.time - chargeStartTime;
             float arrowDamage = Mathf.Lerp(bowStats.minArrowDamage, bowStats.maxArrowDamage, chargeDuration / bowStats.maxChargeTime);
             float arrowSpeed = Mathf.Lerp(bowStats.minArrowSpeed, bowStats.maxArrowSpeed, chargeDuration / bowStats.maxChargeTime);
+            Vector2 shootingDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
+            shootingDirection.Normalize();
+
             ShootArrow(shootingDirection, arrowDamage, arrowSpeed);
             isChargingShot = false;
         }
 
-        if (Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Mouse1))
+        if (InputManager.GetKey(KeyCode.Mouse0) || InputManager.GetKey(KeyCode.Mouse1))
         {
             // Hier können Sie visuelles Feedback für das Aufladen des Schusses hinzufügen
         }
@@ -73,7 +72,6 @@ public class Bow_Combat : WeaponBase
             advancedArrow.Initialize(shootingDirection, arrowDamage, arrowSpeed, bowStats.desiredRotation);
         }
     }
-
     public override void Attack(bool isLightAttack)
     {
         // This method is not used for the bow, as we're using AimAndShoot instead

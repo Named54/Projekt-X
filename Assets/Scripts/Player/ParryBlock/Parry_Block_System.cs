@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Parry_Block_System : MonoBehaviour
 {
-    private Player_Movement movement;
+    private PlayerMovement movement;
 
     [Header("Parry Settings")]
     public int parryDamage;
@@ -28,7 +28,7 @@ public class Parry_Block_System : MonoBehaviour
 
     private void Start()
     {
-        movement = GetComponent<Player_Movement>();
+        movement = GetComponent<PlayerMovement>();
 
         blockCollider = gameObject.AddComponent<CircleCollider2D>();
         blockCollider.radius = blockWindowRange;

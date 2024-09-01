@@ -16,14 +16,16 @@ public enum PlayerStateFlags
 public class CombatSystem : MonoBehaviour
 {
     public WeaponBase currentWeapon;
-    public Player_Movement movement;
+    public PlayerMovement movement;
 
+    [Header("Push Settings")]
     public float pushDistance = 2f;
     public float pushCooldown = 1f;
     public float pushDuration = 0.2f;
     private bool isPushCooldown = false;
     [SerializeField] private float pushCooldownTimer;
 
+    [Header("Attack Settings")]
     public bool canAttack = true;
     public float attackRange = 1.5f;
     private bool isBowEquipped = false;
@@ -31,69 +33,101 @@ public class CombatSystem : MonoBehaviour
     public LayerMask enemyLayer;
     private PlayerStateFlags playerState = PlayerStateFlags.None;
 
+    [Header("Combo Settings")]
     private int currentComboStep = 0;
-    private const int maxComboStep = 2; // 0, 1, 2 für drei Schritte
+    private const int maxComboStep = 2;
+    public float comboResetTime = 1.5f;
+    private float lastAttackTime;
 
-    Vector2 lockedMoveDirection;
+    public Vector2 lockedMoveDirection;
+
+    private WeaponWheelController weaponWheel;
+    private Parry_Block_System parryBlockSystem;
+
+    private void Start()
+    {
+        weaponWheel = FindFirstObjectByType<WeaponWheelController>();
+        parryBlockSystem = GetComponent<Parry_Block_System>();
+    }
 
     private void Update()
     {
+        if (weaponWheel != null && weaponWheel.IsWeaponWheelOpen())
+        {
+            return;
+        }
         HandleAttackInput();
         UpdateCooldowns();
+        CheckComboReset();
     }
 
     private void HandleAttackInput()
     {
-        Parry_Block_System parry_Block_System = GetComponent<Parry_Block_System>(); // Referenz auf das Parry-Block-System
-        if (!playerState.HasFlag(PlayerStateFlags.Attacking) && !isPushCooldown)
+        if (playerState.HasFlag(PlayerStateFlags.Attacking) || isPushCooldown || parryBlockSystem.isParrying || parryBlockSystem.isBlocking)
         {
-            if (Input.GetMouseButtonDown(0) && currentWeapon.CanLightAttack() && !parry_Block_System.isParrying && !parry_Block_System.isBlocking)
-            {
-                PerformAttack(true);
-            }
-            else if (Input.GetMouseButtonDown(1) && currentWeapon.CanHeavyAttack() && !parry_Block_System.isParrying && !parry_Block_System.isBlocking)
-            {
-                PerformAttack(false);
-            }
+            return;
+        }
+
+        if (InputManager.GetMouseButtonDown(0) && currentWeapon.CanLightAttack())
+        {
+            PerformAttack(true);
+        }
+        else if (InputManager.GetMouseButtonDown(1) && currentWeapon.CanHeavyAttack())
+        {
+            PerformAttack(false);
         }
     }
 
     private void PerformAttack(bool isLightAttack)
     {
         StartPushCooldown();
-
         lockedMoveDirection = movement.moveDirection;
         bool isMoving = movement.moveDirection != Vector2.zero;
 
         if (!isBowEquipped && (isMoving || currentComboStep == maxComboStep))
         {
-            DashInAttackDirection();
+            StartCoroutine(PerformDashAttack(isLightAttack));
         }
-        else if (!isBowEquipped)
+        else
         {
-            PerformStationaryAttack();
+            PerformStationaryAttack(isLightAttack);
         }
 
-        currentWeapon.Attack(isLightAttack);
-        CheckEnemyCollisions(isLightAttack);
-
+        lastAttackTime = Time.time;
         currentComboStep = (currentComboStep + 1) % (maxComboStep + 1);
     }
 
-    private void DashInAttackDirection()
+    private IEnumerator PerformDashAttack(bool isLightAttack)
     {
-        // Für den letzten Combo-Schlag, wenn der Spieler steht
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = transform.position.z;
-        Vector3 dashDirection = (mousePosition - transform.position).normalized;
+        playerState |= PlayerStateFlags.Attacking | PlayerStateFlags.Pushing;
+        movement.moveDirection = Vector2.zero;
 
-        Vector3 dashDestination = transform.position + (Vector3)dashDirection * pushDistance;
-        StartCoroutine(MovePlayer(dashDestination));
+        Vector3 dashDirection = GetDashDirection();
+        Vector3 dashDestination = transform.position + dashDirection * pushDistance;
+
+        float elapsedTime = 0f;
+        Vector3 startPosition = transform.position;
+
+        while (elapsedTime < pushDuration)
+        {
+            transform.position = Vector3.Lerp(startPosition, dashDestination, elapsedTime / pushDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = dashDestination;
+        currentWeapon.Attack(isLightAttack);
+        CheckEnemyCollisions(isLightAttack);
+
+        yield return new WaitForSeconds(0.325f);
+        playerState &= ~(PlayerStateFlags.Attacking | PlayerStateFlags.Pushing);
     }
 
-    private void PerformStationaryAttack()
+    private void PerformStationaryAttack(bool isLightAttack)
     {
         playerState |= PlayerStateFlags.Attacking;
+        currentWeapon.Attack(isLightAttack);
+        CheckEnemyCollisions(isLightAttack);
         StartCoroutine(StationaryAttackDelay());
     }
 
@@ -103,35 +137,22 @@ public class CombatSystem : MonoBehaviour
         playerState &= ~PlayerStateFlags.Attacking;
     }
 
-    private IEnumerator MovePlayer(Vector3 targetPosition)
+    private Vector3 GetDashDirection()
     {
-        playerState |= PlayerStateFlags.Attacking | PlayerStateFlags.Pushing;// Zustände hinzufügen
-
-        float elapsedTime = 0f;
-        Vector3 startPosition = transform.position;
-
-        while (elapsedTime < pushDuration)
-        {
-            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / pushDuration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        transform.position = targetPosition;
-        movement.moveDirection = Vector2.zero;
-        // yield return new WaitForSeconds(0.5f);
-        playerState &= ~(PlayerStateFlags.Attacking | PlayerStateFlags.Pushing);// Zustände entfernen
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = transform.position.z;
+        return (mousePosition - transform.position).normalized;
     }
 
     private void CheckEnemyCollisions(bool isLightAttack)
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, attackRange, enemyLayer);
+        int damage = isLightAttack ? currentWeapon.weaponStats.lightAttackDamage : currentWeapon.weaponStats.heavyAttackDamage;
+
         foreach (Collider2D enemyCollider in hitEnemies)
         {
-            BaseEnemies enemy = enemyCollider.GetComponent<BaseEnemies>();
-            if (enemy != null)
+            if (enemyCollider.TryGetComponent(out BaseEnemies enemy))
             {
-                int damage = isLightAttack ? currentWeapon.weaponStats.lightAttackDamage : currentWeapon.weaponStats.heavyAttackDamage;
                 enemy.TakeDamage(damage, gameObject);
                 Debug.Log($"Player attacked enemy and dealt {damage} damage! Combo step: {currentComboStep}");
             }
@@ -149,23 +170,30 @@ public class CombatSystem : MonoBehaviour
         if (pushCooldownTimer > 0)
         {
             pushCooldownTimer -= Time.deltaTime;
-            if (pushCooldownTimer <= 0)
-            {
-                isPushCooldown = false;
-            }
+            isPushCooldown = pushCooldownTimer > 0;
         }
 
         currentWeapon.UpdateCooldowns();
     }
+
+    private void CheckComboReset()
+    {
+        if (Time.time - lastAttackTime > comboResetTime)
+        {
+            currentComboStep = 0;
+        }
+    }
+
     public bool CanPerformAction(PlayerStateFlags requiredState)
     {
         return !playerState.HasFlag(requiredState);
     }
+
     public void SwitchWeapon(WeaponBase newWeapon)
     {
-        Debug.Log($"Switched weapon to {newWeapon.name}");
         currentWeapon = newWeapon;
         isBowEquipped = newWeapon is Bow_Combat;
+        Debug.Log($"Switched weapon to {newWeapon.name}");
     }
 
     private void OnDrawGizmosSelected()
