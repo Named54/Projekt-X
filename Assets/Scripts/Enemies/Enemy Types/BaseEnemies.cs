@@ -1,10 +1,18 @@
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.UI;
 using System.Collections;
-using System;
 
 public class BaseEnemies : MonoBehaviour
 {
+    [Header("UI")]
+    public Vector3 offset;
+    [SerializeField] private Slider healthSlider;
+    [SerializeField] private Image fillImage;
+    [SerializeField] private Gradient healthGradient;
+    [SerializeField] private float updateSpeed = 3f;
+    [SerializeField] private bool useSmoothing = true;
+    private float targetFillAmount;
+
     [Header("Experience Settings")]
     public int experienceValue = 50;
     private PlayerLevelUpSystem playerLevelSystem;
@@ -38,6 +46,7 @@ public class BaseEnemies : MonoBehaviour
 
     protected virtual void Update()
     {
+        healthSlider.transform.position = Camera.main.WorldToScreenPoint(transform.position) + offset;
         if (player == null)
         {
             FindPlayer(); // Sucht erneut nach dem Spieler, falls er nicht gefunden wurde
@@ -47,7 +56,56 @@ public class BaseEnemies : MonoBehaviour
             CheckPlayerPosition(); // Überprüft die Position des Spielers
         }
     }
+    private void UpdateHealthBar()
+    {
+        // Berechne den Ziel-Füllwert
+        targetFillAmount = (float)currentHealth / maxHealth;
 
+        // Aktualisiere den Slider-Wert
+        healthSlider.value = targetFillAmount;
+
+        if (useSmoothing)
+        {
+            // Sanfte Übergang des Fill-Bildes
+            fillImage.fillAmount = Mathf.Lerp(fillImage.fillAmount, targetFillAmount, Time.deltaTime * updateSpeed);
+        }
+        else
+        {
+            // Sofortige Aktualisierung des Fill-Bildes
+            fillImage.fillAmount = targetFillAmount;
+        }
+
+        // Aktualisiere die Farbe basierend auf dem Gesundheitszustand
+        fillImage.color = healthGradient.Evaluate(targetFillAmount);
+
+        // Optional: Füge visuelle Effekte hinzu, wenn die Gesundheit niedrig ist
+        if (targetFillAmount <= 0.2f)
+        {
+            StartCoroutine(PulseHealthBar());
+        }
+    }
+    private IEnumerator PulseHealthBar()
+    {
+        float pulseDuration = 0.5f;
+        float elapsedTime = 0f;
+        Color originalColor = fillImage.color;
+        Color pulseColor = Color.red;
+
+        while (elapsedTime < pulseDuration)
+        {
+            fillImage.color = Color.Lerp(originalColor, pulseColor, Mathf.PingPong(elapsedTime / pulseDuration, 1));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        fillImage.color = originalColor;
+    }
+
+    // Rufen Sie diese Methode auf, wenn sich die Gesundheit ändert
+    public void OnHealthChanged()
+    {
+        UpdateHealthBar();
+    }
     protected void FindPlayer()
     {
         GameObject playerObj = GameObject.FindGameObjectWithTag("Players"); // Sucht den Spieler anhand des Tags
@@ -89,7 +147,7 @@ public class BaseEnemies : MonoBehaviour
     public virtual void TakeDamage(int damage, GameObject causer)
     {
         currentHealth -= damage;
-
+        UpdateHealthBar();
         knockbackReceiver.ApplyKnockback(causer.transform.position);
         ResetEnemyState();
         if (currentHealth <= 0)
