@@ -124,7 +124,7 @@ public class FrogEnemy : BaseEnemies
         // Starte Abklingzeit
         StartCoroutine(AttackCooldown());
     }
-    private void CheckPlayerCollision()
+    protected virtual void CheckPlayerCollision()
     {
         Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, attackRange, LayerMask.GetMask("Player"));
         if (playerCollider != null)
@@ -185,7 +185,7 @@ public class FrogEnemy : BaseEnemies
       // Override SearchForPlayerAfterDelay to include jump attack
       protected new IEnumerator SearchForPlayerAfterDelay()
       {
-          yield return new WaitForSeconds(1f);
+          yield return new WaitForSeconds(2f);
           FindPlayer();
           if (player != null)
           {

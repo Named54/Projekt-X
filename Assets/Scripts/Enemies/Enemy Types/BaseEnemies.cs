@@ -132,18 +132,6 @@ public class BaseEnemies : MonoBehaviour
             }
         }
     }
-
-    protected virtual void MoveTowardsPlayer()
-    {
-        // Bewegt den FrogEnemy langsam zum Spieler
-        /*
-        if (player != null && !isJumping && !isOnCooldown)
-        {
-            Vector2 direction = (player.position - transform.position).normalized;
-            rb.position += direction * (Time.deltaTime * jumpSpeed * 0.5f);
-        }
-        */
-    }
     public virtual void TakeDamage(int damage, GameObject causer)
     {
         currentHealth -= damage;
@@ -172,7 +160,15 @@ public class BaseEnemies : MonoBehaviour
         playerLevelSystem.GainExperience(experienceValue);
         Destroy(gameObject);
     }
+    protected virtual void MoveTowardsPlayer()
+    {
+        // Implementierung in der Basisklasse, falls benötigt
+    }
 
+    public virtual void CheckPlayerCollision()
+    {
+        // Implementierung in der Basisklasse, falls benötigt
+    }
     protected virtual void OnDrawGizmosSelected()
     {
         // Visualisiert die verschiedenen Reichweiten des Feindes im Editor

@@ -56,7 +56,6 @@ public class WeaponWheelController : MonoBehaviour
         else
         {
             anim.SetBool("OpenWeaponWheel", false);
-            //canAttack = true;
         }
         if (weaponSwitchRequested)
         {

@@ -6,7 +6,14 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Vector2 moveDirection;
+    private DepthSystem depthSystem;
     private PlayerAnimationController animationController;
+
+    [Header("Jump Settings")]
+    public float jumpForce = 5f;
+    public float jumpCooldown = 0.5f;
+    private bool canJump = true;
+    private float jumpTimer = 0f;
 
     [Header("Move Settings")]
     public int walkSpeed;
@@ -35,17 +42,13 @@ public class PlayerMovement : MonoBehaviour
     [Header("Layer Settings")]
     public LayerMask obstacleLayer;
 
-
-    [Header("Jump Settings")]
-    public float jumpHeight = 1f;
-    private int currentHeight = 0;
-
     // Start is called before the first frame update
     void Start()
     {
         moveSpeed = walkSpeed;
         currentStamina = maxStamina;
         rb = GetComponent<Rigidbody2D>();
+        depthSystem = GetComponent<DepthSystem>();
         animationController = GetComponent<PlayerAnimationController>();
     }
 
@@ -57,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
             HandleDash();
             HandleSprint();
             UpdateStamina();
+            HandleJumpCooldown();
             HandleMovementInput();
             UpdateAnimationController();
         }
@@ -78,6 +82,48 @@ public class PlayerMovement : MonoBehaviour
         {
             // Bewegung ist gesperrt, setze movement auf 0
             moveDirection = Vector2.zero;
+        }
+    }
+    public void HandleJumpCooldown()
+    {
+        if (!canJump)
+        {
+            jumpTimer += Time.deltaTime;
+            if (jumpTimer >= jumpCooldown)
+            {
+                canJump = true;
+                jumpTimer = 0f;
+            }
+        }
+
+        // Springen
+        if (InputManager.GetKeyDown(KeyCode.Space) && canJump)
+        {
+            HandleJump();
+        }
+    }
+
+    public void HandleJump()
+    {
+        if (!canJump || currentStamina < staminaCostPerHit) return;
+
+        canJump = false;
+        currentStamina -= staminaCostPerHit;
+
+        Vector2 jumpDirection = moveDirection != Vector2.zero ? moveDirection : Vector2.up;
+
+        // Prüfe, ob ein Sprung in diese Richtung möglich ist
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, jumpDirection, 1f, obstacleLayer);
+        if (hit.collider != null)
+        {
+            // Hindernis gefunden, prüfe auf eine höhere Ebene
+            depthSystem.ChangeDepth(depthSystem.currentDepth + 1);
+        }
+        else
+        {
+            // Kein Hindernis, normaler Sprung
+            rb.AddForce(jumpDirection * jumpForce, ForceMode2D.Impulse);
+            Debug.Log(jumpDirection);
         }
     }
     void UpdateAnimationController()
@@ -105,44 +151,18 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 movement = Time.fixedDeltaTime * moveSpeed * moveDirection;
         rb.position = rb.position + movement;
-        // Automatisches Hochsteigen
-        if (Physics2D.Raycast(transform.position, movement, 0.5f, obstacleLayer))
-        {
-            if (CanClimbAutomatically())
-            {
-                currentHeight++;
-                transform.position += Vector3.up * jumpHeight;
-            }
-        }
-
-        // Springen
-        if (InputManager.GetKeyDown(KeyCode.Space))
-        {
-            Jump();
-        }
     }
-    bool CanClimbAutomatically()
+public void HandleDash()
+{
+    dashCooldownTimer -= Time.deltaTime;
+
+    if (InputManager.GetKeyDown(KeyCode.LeftControl) && dashCooldownTimer <= 0 && !isDashing && currentStamina >= dashStaminaCost)
     {
-        // Hier Logik für automatisches Klettern implementieren
-        return true; // Vereinfacht für dieses Beispiel
+        StartCoroutine(PerformDash());
     }
+}
 
-    void Jump()
-    {
-        currentHeight++;
-        transform.position += Vector3.up * jumpHeight;
-    }
-    public void HandleDash()
-    {
-        dashCooldownTimer -= Time.deltaTime;
-
-        if (InputManager.GetKeyDown(KeyCode.LeftControl) && dashCooldownTimer <= 0 && !isDashing && currentStamina >= dashStaminaCost)
-        {
-            StartCoroutine(PerformDash());
-        }
-    }
-
-    private IEnumerator PerformDash()
+private IEnumerator PerformDash()
     {
         isDashing = true;
         canMove = false;
@@ -179,6 +199,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // Neue öffentliche Methode zur Wiederherstellung von Stamina
+    public void RestoreStamina(float amount)
+    {
+        currentStamina = Mathf.Min(maxStamina, currentStamina + amount);
+        UpdateStaminaBar();
+    }
+    // Aktualisierte UpdateStamina-Methode
     private void UpdateStamina()
     {
         if (isSprinting)
@@ -192,6 +219,16 @@ public class PlayerMovement : MonoBehaviour
             currentStamina += staminaRegenerated;
         }
         currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
-        StaminaBar.fillAmount = currentStamina / maxStamina;
+        UpdateStaminaBar();
     }
+
+    // Neue Methode zur Aktualisierung der Stamina-Anzeige
+    private void UpdateStaminaBar()
+    {
+        if (StaminaBar != null)
+        {
+            StaminaBar.fillAmount = currentStamina / maxStamina;
+        }
+    }
+
 }
