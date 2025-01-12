@@ -16,12 +16,12 @@ public class AdvancedArrow : MonoBehaviour
     {
         this.damage = damage;
         this.speed = speed;
-        rb.velocity = direction * speed;
+        rb.linearVelocity = direction * speed;
         transform.rotation.SetFromToRotation(transform.position, transform.position + new Vector3(direction.x, direction.y, 0));
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Players")) // Überprüfe, ob das Ziel der Spieler ist
+        if (collision.gameObject.CompareTag("Players")) // ï¿½berprï¿½fe, ob das Ziel der Spieler ist
         {
             return; // Verlasse die Methode, wenn der Spieler getroffen wurde, ohne etwas zu tun
         }
@@ -29,7 +29,7 @@ public class AdvancedArrow : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(Mathf.RoundToInt(damage), gameObject);
-            // Füge Knockback hinzu
+            // Fï¿½ge Knockback hinzu
             KnockbackReceiver knockbackReceiver = enemy.GetComponent<KnockbackReceiver>();
             if (knockbackReceiver != null)
             {
@@ -39,7 +39,7 @@ public class AdvancedArrow : MonoBehaviour
         }
         else
         {
-            // Pfeil hat etwas anderes getroffen, zerstöre ihn
+            // Pfeil hat etwas anderes getroffen, zerstï¿½re ihn
             Destroy(gameObject);
         }
     }

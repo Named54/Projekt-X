@@ -76,7 +76,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
     #region Movement Functions 
     public void MoveEnemy(Vector2 velocity)
     {
-        rb.velocity = velocity;
+        rb.linearVelocity = velocity;
         CheckForFacingToPlayer(velocity);
     }
 

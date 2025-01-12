@@ -24,11 +24,11 @@ public class FrogDashSO : ScriptableObject
         float elapsedTime = 0f;
         while (elapsedTime < dashDuration)
         {
-            enemy.rb.velocity = dashDirection * dashSpeed;
+            enemy.rb.linearVelocity = dashDirection * dashSpeed;
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        enemy.rb.velocity = Vector2.zero;
+        enemy.rb.linearVelocity = Vector2.zero;
         yield return new WaitForSeconds(dashCooldown);
     }
 }

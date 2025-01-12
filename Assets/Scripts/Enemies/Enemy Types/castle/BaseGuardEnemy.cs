@@ -51,12 +51,12 @@ public class BaseGuardEnemy : BaseEnemies
         if (player != null)
         {
             Vector2 direction = (player.position - transform.position).normalized;
-            rb.velocity = direction * moveSpeed;
+            rb.linearVelocity = direction * moveSpeed;
 
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
             if (distanceToPlayer <= attackRange)
             {
-                rb.velocity = Vector2.zero;
+                rb.linearVelocity = Vector2.zero;
                 StartCoroutine(PerformAttackCombo());
             }
         }
@@ -125,7 +125,7 @@ public class BaseGuardEnemy : BaseEnemies
         base.ResetEnemyState();
         isOnCooldown = false;
         isAttacking = false;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
     }
 
     protected override void Die()

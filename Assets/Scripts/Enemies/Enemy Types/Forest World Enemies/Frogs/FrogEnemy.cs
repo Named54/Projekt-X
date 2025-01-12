@@ -8,10 +8,10 @@ public class FrogEnemy : BaseEnemies
     public float jumpPrepareTime = 2f;
 
     private bool isJumping = false; // Gibt an, ob der Frosch gerade springt
-    private bool isOnCooldown = false; // Gibt an, ob der Sprung abkühlt
+    private bool isOnCooldown = false; // Gibt an, ob der Sprung abkï¿½hlt
 
     [Header("Attack Settings")]
-    public int attackDamage = 2; // Schaden, den der Feind dem Spieler zufügt
+    public int attackDamage = 2; // Schaden, den der Feind dem Spieler zufï¿½gt
     public float attackCooldown = 2f; // Abklingzeit zwischen Angriffen
 
 
@@ -41,7 +41,7 @@ public class FrogEnemy : BaseEnemies
                     StartCoroutine(PrepareAndJump());
                 }
             }
-            // Wenn der Spieler außerhalb des Detektionsradius, aber innerhalb des Exitradius ist, springt der FrogEnemy zum Rand des Detektionsradius in Richtung des Spielers
+            // Wenn der Spieler auï¿½erhalb des Detektionsradius, aber innerhalb des Exitradius ist, springt der FrogEnemy zum Rand des Detektionsradius in Richtung des Spielers
             else
             {
                 if (!isJumping && !isOnCooldown && !isPreparing)
@@ -51,7 +51,7 @@ public class FrogEnemy : BaseEnemies
                 }
             }
         }
-        // Wenn der Spieler außerhalb des Exitradius ist, verliert der FrogEnemy ihn aus den Augen
+        // Wenn der Spieler auï¿½erhalb des Exitradius ist, verliert der FrogEnemy ihn aus den Augen
         else if (distanceToPlayer > exitRange)
         {
             isPlayerDetected = false;
@@ -75,7 +75,7 @@ public class FrogEnemy : BaseEnemies
         isPreparing = true;
 
         // Zeige Vorbereitung an (z.B. durch Animation oder visuellen Effekt)
-        // TODO: Fügen Sie hier Code für die Vorbereitungsanzeige hinzu
+        // TODO: Fï¿½gen Sie hier Code fï¿½r die Vorbereitungsanzeige hinzu
         Debug.Log("FrogEnemy is preparing to jump!");
 
         yield return new WaitForSeconds(jumpPrepareTime);
@@ -104,7 +104,7 @@ public class FrogEnemy : BaseEnemies
         {
             float t = elapsedTime / jumpDuration;
 
-            // Verwende eine Parabel für die Sprunghöhe
+            // Verwende eine Parabel fï¿½r die Sprunghï¿½he
             float height = Mathf.Sin(t * Mathf.PI) * 2f;
 
             Vector2 newPosition = Vector2.Lerp(jumpStartPosition, targetJumpPosition, t);
@@ -118,7 +118,7 @@ public class FrogEnemy : BaseEnemies
         rb.position = targetJumpPosition;
         isJumping = false;
 
-        // Überprüfe Kollision mit dem Spieler
+        // ï¿½berprï¿½fe Kollision mit dem Spieler
         CheckPlayerCollision();
 
         // Starte Abklingzeit
@@ -152,18 +152,18 @@ public class FrogEnemy : BaseEnemies
         }
     }
 
-    // Überschreibt die TakeDamage-Methode der Basisklasse
+    // ï¿½berschreibt die TakeDamage-Methode der Basisklasse
     public override void TakeDamage(int damage, GameObject causer)
     {
         base.TakeDamage(damage, causer);
         Debug.Log($"FrogEnemy nimmt {damage} Schaden!");
         
-        // Zusätzliche Logik für den FrogEnemy beim Schaden nehmen
+        // Zusï¿½tzliche Logik fï¿½r den FrogEnemy beim Schaden nehmen
         // Zum Beispiel: Sprung abbrechen, wenn er gerade springt
         if (isJumping)
         {
             isJumping = false;
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
         }
     }
     private IEnumerator AttackCooldown()
@@ -192,7 +192,7 @@ public class FrogEnemy : BaseEnemies
               StartCoroutine(PrepareAndJump());
           }
       }
-    // Überschreibe die OnDrawGizmosSelected-Methode, um den Angriffsradius und die Zielposition anzuzeigen
+    // ï¿½berschreibe die OnDrawGizmosSelected-Methode, um den Angriffsradius und die Zielposition anzuzeigen
     protected override void OnDrawGizmosSelected()
     {
         base.OnDrawGizmosSelected();
